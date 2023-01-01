@@ -46,7 +46,7 @@ class myTank(pygame.sprite.Sprite): # 48 * 48
 		# 有几条命
 		self.life = 3
 		# 是否处于保护状态, 把此变量设为True, 可进入作弊模式, 让我方坦克处于防弹状态
-		self.protected = False
+		self.protected = True
 		# 子弹
 		self.bullet = Bullet()
 

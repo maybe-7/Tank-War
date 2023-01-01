@@ -76,6 +76,7 @@ def show_switch_stage(screen, width, height, stage):
 	pygame.display.update()
 	delay_event = pygame.constants.USEREVENT + 3
 	pygame.time.set_timer(delay_event, 1000, loops=1)
+	# +此处为显示时间，修改为5s  pygame.time.set_timer(delay_event, 5000, loops=1)
 	while True:
 		for event in pygame.event.get():
 			if event.type == QUIT:
@@ -559,9 +560,10 @@ def main():
 				# 加在我方坦克上的保护罩到期后失效
 				if event.type == stage_data.noprotectMytankEvent:
 					for each in stage_data.mytanksGroup:
-						# BUG
-						#stage_data.mytanksGroup.protected = False
 						each.protected = False
+
+					# BUG
+						#stage_data.mytanksGroup.protected = False
 			# 检查用户键盘操作
 			key_pressed = pygame.key.get_pressed()
 
@@ -606,14 +608,14 @@ def main():
 			screen.blit(stage_data.myhome.home, stage_data.myhome.rect)
 			# 食物
 			handle_food(stage_data, sound_data, screen)
-
+#这部分为上方显示代码
 			if stage_data.num_player == 1:
-				pygame.display.set_caption("坦克大战: 第{0}关, 我方库存坦克数 {1}, 敌方库存坦克数 {2}".format(
+				pygame.display.set_caption("坦克大战+++: 第{0}关, 我方库存坦克数 {1}, 敌方库存坦克数 {2}".format(
 									stage_data.stage,
 									stage_data.tank_player1.life,
 									stage_data.enemytanks_total))
 			else:
-				pygame.display.set_caption("坦克大战: 第{0}关, 我方库存坦克数 ({1},{2}), 敌方库存坦克数 {3}".format(
+				pygame.display.set_caption("坦克大战+++: 第{0}关, 我方库存坦克数 ({1},{2}), 敌方库存坦克数 {3}".format(
 									stage_data.stage,
 									stage_data.tank_player1.life, stage_data.tank_player2.life,
 									stage_data.enemytanks_total))
