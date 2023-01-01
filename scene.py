@@ -369,7 +369,7 @@ class Map():
 		# 	iron.rect.left, iron.rect.top = 3 + x * 24, 3 + y * 24
 		# 	iron.being = True
 		# 	self.ironGroup.add(iron)
-	def stage3(self):
+	def stage5(self):
 		for x in [2, 3,4,5 ,6, 7, 8, 9, 10]:
 			for y in [3]:
 				brick = Brick()
@@ -390,9 +390,58 @@ class Map():
 				brick.rect.left, brick.rect.top = 3 + x * 24, 3 + y * 24
 				brick.being = True
 				self.brickGroup.add(brick)
-	def protect_home(self):
+	def stage6(self):
 		for x, y in [(11, 23), (12, 23), (13, 23), (14, 23), (11, 24), (14, 24), (11, 25), (14, 25)]:
 			iron = Iron()
 			iron.rect.left, iron.rect.top = 3 + x * 24, 3 + y * 24
 			iron.being = True
 			self.ironGroup.add(iron)
+		for x in [6]:
+			for y in [9,10,11,12,13]:
+				brick = Brick()
+				brick.rect.left, brick.rect.top = 3 + x * 24, 3 + y * 24
+				brick.being = True
+				self.brickGroup.add(brick)
+		for x in [9]:
+			for y in [4]:
+				brick = Brick()
+				brick.rect.left, brick.rect.top = 3 + x * 24, 3 + y * 24
+				brick.being = True
+				self.brickGroup.add(brick)
+
+				tree = Tree()
+				tree.rect.left, tree.rect.top = 3 + x * 12, 3 + y * 12
+				tree.being = True
+				self.treeGroup.add(tree)
+
+				#this is tree
+				for x in [38]:
+					for y in [3]:
+						tree= Tree()
+						tree.rect.left, tree.rect.top = 3 + x * 12, 3 + y * 12
+						tree.being = True
+						self.treeGroup.add(tree)
+						for x in [37]:
+							for y in [4,5,6]:
+								tree = Tree()
+								tree.rect.left, tree.rect.top = 3 + x * 12, 3 + y * 12
+								tree.being = True
+								self.treeGroup.add(tree)
+						for x in [36, 37, 38]:
+							for y in [2]:
+								tree = Tree()
+								tree.rect.left, tree.rect.top = 3 + x * 12, 3 + y * 12
+							tree.being = True
+							self.treeGroup.add(tree)
+				for x in [34, 35, 36, 37, 38,39]:
+					for y in [4]:
+						tree = Tree()
+						tree.rect.left, tree.rect.top = 3 + x * 12, 3 + y * 12
+					tree.being = True
+					self.treeGroup.add(tree)
+				for x in [36]:
+					for y in [2,3,5,6]:
+						tree = Tree()
+						tree.rect.left, tree.rect.top = 3 + x * 12, 3 + y * 12
+					tree.being = True
+					self.treeGroup.add(tree)
